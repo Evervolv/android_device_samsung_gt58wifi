@@ -99,22 +99,22 @@ int read_integer(const char* filename)
 
 void set_dsds_properties()
 {
-    android::init::property_set("ro.multisim.simslotcount", "2");
-    android::init::property_set("ro.telephony.ril.config", "simactivation");
-    android::init::property_set("persist.radio.multisim.config", "dsds");
-    android::init::property_set("rild.libpath2", "/system/lib/libsec-ril-dsds.so");
+    property_override("ro.multisim.simslotcount", "2");
+    property_override("ro.telephony.ril.config", "simactivation");
+    property_override("persist.radio.multisim.config", "dsds");
+    property_override("rild.libpath2", "/vendor/lib/libsec-ril-dsds.so");
 }
 
 void set_gsm_properties()
 {
-    android::init::property_set("telephony.lteOnCdmaDevice", "0");
-    android::init::property_set("ro.telephony.default_network", "9");
+    property_override("telephony.lteOnCdmaDevice", "0");
+    property_override("ro.telephony.default_network", "9");
 }
 
 void set_wifi_properties()
 {
-    android::init::property_set("ro.carrier", "wifi-only");
-    android::init::property_set("ro.radio.noril", "1");
+    property_override("ro.carrier", "wifi-only");
+    property_override("ro.radio.noril", "1");
 }
 
 void set_target_properties(const char *device, const char *model)
@@ -130,7 +130,7 @@ void set_target_properties(const char *device, const char *model)
         set_ro_product_prop(source, "model", model);
     }
 
-    android::init::property_set("ro.ril.telephony.mqanelements", "6");
+    property_override("ro.ril.telephony.mqanelements", "6");
 
     /* check if the simslot count file exists */
     if (access(SIMSLOT_FILE, F_OK) == 0) {
