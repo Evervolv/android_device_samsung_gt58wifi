@@ -24,8 +24,6 @@
 # Inherit from common
 include device/samsung/gte-common/BoardConfigCommon.mk
 
-PLATFORM_PATH := device/samsung/gt58wifi
-
 # Asserts
 TARGET_OTA_ASSERT_DEVICE := gt58wifi,gt58wifixx,SM-T350
 
@@ -41,8 +39,8 @@ TARGET_KERNEL_VARIANT_CONFIG := msm8916_sec_gt58wifi_eur_defconfig
 BUILD_BROKEN_DUP_RULES := true
 
 # Init
-TARGET_INIT_VENDOR_LIB := //$(PLATFORM_PATH):libinit_gt58wifi
-TARGET_RECOVERY_DEVICE_MODULES := $(PLATFORM_PATH)/init
+TARGET_INIT_VENDOR_LIB := //device/samsung/gt58wifi:libinit_gt58wifi
+TARGET_RECOVERY_DEVICE_MODULES := device/samsung/gt58wifi/init
 
 # Partition sizes
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3145728000
