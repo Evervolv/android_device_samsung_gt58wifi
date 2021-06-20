@@ -27,7 +27,7 @@ include device/samsung/gte-common/BoardConfigCommon.mk
 DEVICE_PATH := device/samsung/gt58wifi
 
 # Asserts
-TARGET_OTA_ASSERT_DEVICE := gt58wifi,gt58wifixx,SM-T350
+TARGET_OTA_ASSERT_DEVICE := gt58wifi,gt58wifixx,SM-P350,SM-T350
 
 TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
     /vendor/lib/hw/audio.primary.msm8916.so=25 \

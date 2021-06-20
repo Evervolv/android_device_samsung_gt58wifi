@@ -160,7 +160,11 @@ void init_target_properties()
     /* set the device properties */
     std::string bootloader = android::base::GetProperty("ro.bootloader", "");
 
-    if (bootloader.find("T350") == 0) {
+    if (bootloader.find("P350") == 0) {
+        device = (char *)"gt58wifi";
+        model = (char *)"SM-P350";
+        set_wifi_properties();
+    } else if (bootloader.find("T350") == 0) {
         device = (char *)"gt58wifi";
         model = (char *)"SM-T350";
         set_wifi_properties();
